@@ -7,5 +7,7 @@ composer.lock
 .DS_Store
 Thumbs.db
 /ENV
-/app/config/app.php
-/app/config/database.php
+app/config/app.php
+app/config/database.php
+~
+
