@@ -28,7 +28,7 @@ Route::get('/i', function()
 Route::post('/import', 'Admin_ImportController@add');
 Route::get('/admin', 'Admin_UserController@showProfile'); // admin index page
 Route::post('/sign_up', 'Admin_UserController@signUp'); // reg
-Route::get('/sign_in', function()
+Route::post('/sign_in', function()
 {
     $input = Input::get('email', '');
     $admin = Administrator::whereUsername($input)->first();
