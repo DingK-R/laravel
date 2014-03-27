@@ -13,5 +13,30 @@
 
 Route::get('/', function()
 {
-	return View::make('hello');
+	// return View::make('hello');
+    // $reflection = new ReflectionClass('Administrator');  //  inspect the methods and constants of any class!
+ 
+    // print_r($reflection->getMethods());
+   echo 'hello'; 
 });
+
+Route::get('/i', function()
+{
+    return View::make('import');
+});
+
+Route::post('/import', 'Admin_ImportController@add');
+Route::get('/admin', 'Admin_UserController@showProfile'); // admin index page
+Route::post('/sign_up', 'Admin_UserController@signUp'); // reg
+Route::get('/sign_in', function()
+{
+    $input = Input::get('email', '');
+    $admin = Administrator::whereUsername($input)->first();
+    if ($admin['exists'] == TRUE) {
+        echo 'ok';
+        return;
+    }
+    
+
+});
+// login
