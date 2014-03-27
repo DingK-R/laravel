@@ -32,7 +32,7 @@ class TimeList extends Migration {
 	public function down()
 	{
 		//
-		Schema::drop($this->table);
+		Schema::dropIfExists($this->table);
 	}
 
 }
